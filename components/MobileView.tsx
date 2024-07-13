@@ -27,7 +27,7 @@ const MobileView = () => {
         </SheetTrigger>
         <SheetContent side="left" className="border-none bg-black-1">
           <Link href="/" className="flex  items-center gap-1 pb-10 pl-4">
-            <Image src="/icons/logo.svg" alt="logo" width={23} height={27} />
+            <Image src="/icons/logos.png" alt="logo" width={37} height={37} />
             <h1 className="text-24 font-extrabold text-white-1 ml-2">
               Bablozic
             </h1>

@@ -33,7 +33,7 @@ const LeftSideBar = () => {
           href="/"
           className="flex  items-center gap-1 pb-10 max-lg:justify-center"
         >
-          <Image src="/icons/logo.svg" alt="logo" width={23} height={27} />
+          <Image src="/icons/logos.png" alt="logo" width={35} height={35} />
           <h1 className="text-24 font-extrabold text-white max-lg:hidden">
             Bablozic
           </h1>
