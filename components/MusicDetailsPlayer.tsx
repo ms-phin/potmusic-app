@@ -28,13 +28,13 @@ const PodcastDetailPlayer = ({
   const { setAudio } = useAudio();
   const { toast } = useToast();
   const [isDeleting, setIsDeleting] = useState(false);
-  const deletePodcast = useMutation(api.musics.deletePodcast);
+  const deleteMusic = useMutation(api.musics.deleteMusic);
   const updateViewsNumber = useMutation(api.musics.updateMusicViews);
 
   const handleDelete = async () => {
     try {
       if (imageStorageId && audioStorageId) {
-        await deletePodcast({ musicId, imageStorageId, audioStorageId });
+        await deleteMusic({ musicId, imageStorageId, audioStorageId });
         toast({
           title: "Podcast deleted",
         });

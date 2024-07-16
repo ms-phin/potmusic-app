@@ -85,7 +85,7 @@ export const getMusicByAuthorId = query({
 });
 
 // this mutation will delete the podcast.
-export const deletePodcast = mutation({
+export const deleteMusic = mutation({
   args: {
     musicId: v.id("musics"),
     imageStorageId: v.id("_storage"),
