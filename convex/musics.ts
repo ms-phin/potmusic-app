@@ -163,11 +163,26 @@ export const getMusicByUserId = query({
       .filter((q) => q.eq(q.field("authorId"), args.authorId))
       .collect();
 
-    const totalListeners = musics.reduce(
-      (sum, podcast) => sum + podcast.views,
-      0
-    );
+    const totalListeners = musics.reduce((sum, music) => sum + music.views, 0);
 
     return { musics, listeners: totalListeners };
+  },
+});
+
+// this mutation will update the views of the podcast.
+export const updateMusicViews = mutation({
+  args: {
+    musicId: v.id("musics"),
+  },
+  handler: async (ctx, args) => {
+    const music = await ctx.db.get(args.musicId);
+
+    if (!music) {
+      throw new ConvexError("music not found");
+    }
+
+    return await ctx.db.patch(args.musicId, {
+      views: music.views + 1,
+    });
   },
 });
