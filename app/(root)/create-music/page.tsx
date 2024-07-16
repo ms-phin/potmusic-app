@@ -31,7 +31,7 @@ const formSchema = z.object({
   MusicTitle: z.string().min(2),
 });
 
-const createpodcast = () => {
+const CreateMusic = () => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [audioDuration, setAudioDuration] = useState(0);
@@ -182,4 +182,4 @@ const createpodcast = () => {
     </section>
   );
 };
-export default createpodcast;
+export default CreateMusic;
