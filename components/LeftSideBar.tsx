@@ -25,7 +25,7 @@ const LeftSideBar = () => {
   return (
     <section
       className={cn("left_sidebar h-[calc(100vh-5px)]", {
-        "h-[calc(100vh-140px)]": audio?.audio,
+        "h-[calc(100vh-120px)]": audio?.audio,
       })}
     >
       <nav className="flex flex-col gap-6">

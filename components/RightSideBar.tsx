@@ -17,14 +17,15 @@ const RightSideBar = () => {
   const { user } = useUser();
   const topMusics = useQuery(api.user.getTopUserByMusicCount);
   const router = useRouter();
-  const audio = useAudio()
+  const audio = useAudio();
   if (!topMusics) return <LoaderSpinner />;
 
   return (
-    <section  className={cn("right_sidebar h-[calc(100vh-5px)]", {
-      "h-[calc(100vh-140px)]": audio?.audio
-    })}
-  >
+    <section
+      className={cn("right_sidebar h-[calc(100vh-5px)]", {
+        "h-[calc(100vh-120px)]": audio?.audio,
+      })}
+    >
       <SignedIn>
         <Link href={`/profile/${user?.id}`} className="flex gap-3 pb-12">
           <UserButton />
@@ -69,8 +70,10 @@ const RightSideBar = () => {
               </figure>
               <div className="flex items-center">
                 <p className="text-12 font-normal text-white-1">
-                {musician.totalMusics > 1 ? `${musician.totalMusics} musics` : `${musician.totalMusics} music`}
-                </p>                  
+                  {musician.totalMusics > 1
+                    ? `${musician.totalMusics} musics`
+                    : `${musician.totalMusics} music`}
+                </p>
               </div>
             </div>
           ))}
